@@ -1,16 +1,18 @@
 extends Node
 
 @export var hp = 3
-@export var hpcount: Node
+@export var heartContainer: Node
 var game_over = false
 
 func _ready() :
 	SignalBus.lose_life.connect(_lose_life)
-	hpcount.text = str(hp)
+	for heart in heartContainer.get_children():
+		heart.show()
 	
 	
 func _lose_life():
 	hp -= 1
-	hpcount.text = str(hp)
+	heartContainer.get_child(hp).hide()
 	if hp == 0:
 		game_over = true
+	await get_tree().create_timer(2.0).timeout
