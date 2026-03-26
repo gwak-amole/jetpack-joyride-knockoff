@@ -17,7 +17,7 @@ position = Vector2(0, 27.5)
 shape = SubResource("RectangleShape2D_qsmld")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, 47)
+position = Vector2(46, 47)
 scale = Vector2(1, 5.7)
 
 [node name="Area2D" type="Area2D" parent="."]
