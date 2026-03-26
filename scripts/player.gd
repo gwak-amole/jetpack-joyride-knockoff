@@ -5,6 +5,9 @@ extends CharacterBody2D
 @export var gravity = 1500.0
 @onready var screen_size = get_viewport_rect().size
 
+func _ready():
+	$AnimatedSprite2D.play("default")
+
 func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")	
 	velocity.x = speed_x * direction
