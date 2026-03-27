@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cci347buliqkw"]
+[gd_scene load_steps=7 format=3 uid="uid://cci347buliqkw"]
 
 [ext_resource type="Script" path="res://scripts/gameover.gd" id="1_16mqx"]
 [ext_resource type="FontFile" uid="uid://crns6iuv23mjg" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="1_dxi2y"]
 [ext_resource type="FontFile" uid="uid://chftjwlc4ghut" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_cn04e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ndjft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vggqc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_odp84"]
 
 [node name="gameover" type="Control"]
 layout_mode = 3
@@ -46,9 +52,15 @@ anchor_left = 0.0546875
 anchor_top = 0.57716
 anchor_right = 0.689236
 anchor_bottom = 0.66821
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0.529067, 0.529067, 0.529067, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_cn04e")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ndjft")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vggqc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_odp84")
 text = "Back Home"
 alignment = 0
 metadata/_edit_use_anchors_ = true
