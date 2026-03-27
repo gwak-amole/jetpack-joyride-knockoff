@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=4 uid="uid://dn01n2heumf6s"]
+
+[ext_resource type="Script" path="res://scripts/startscreen.gd" id="1_hklu5"]
+[ext_resource type="Texture2D" uid="uid://dwjo25fih42n6" path="res://art/tiles.png" id="1_rj48d"]
+[ext_resource type="Texture2D" uid="uid://dfwj6cmmhedt8" path="res://art/clouds.png" id="2_rf55v"]
+[ext_resource type="FontFile" uid="uid://bt25ginw1gqtj" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="3_5ej8n"]
+[ext_resource type="FontFile" uid="uid://chftjwlc4ghut" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="4_o44ha"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_35ya5"]
+texture = ExtResource("1_rj48d")
+4:0/size_in_atlas = Vector2i(4, 4)
+4:0/0 = 0
+8:0/size_in_atlas = Vector2i(4, 4)
+8:0/0 = 0
+0:0/size_in_atlas = Vector2i(4, 4)
+0:0/0 = 0
+12:0/size_in_atlas = Vector2i(4, 4)
+12:0/0 = 0
+16:0/size_in_atlas = Vector2i(4, 4)
+16:0/0 = 0
+20:0/size_in_atlas = Vector2i(4, 4)
+20:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6m0sr"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_35ya5")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilb4o"]
+texture = ExtResource("2_rf55v")
+0:0/size_in_atlas = Vector2i(16, 8)
+0:0/0 = 0
+16:0/size_in_atlas = Vector2i(16, 8)
+16:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_644dn"]
+sources/0 = SubResource("TileSetAtlasSource_ilb4o")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oydem"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6sgnb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0n2x"]
+
+[node name="startscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hklu5")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAAgAAAAMAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAIAAAAAAABAAgAAAAUAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAEAAAAAAACAAgAAAAMAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAcAAAAEAAAAAAADAAgAAAAMAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAcAAAAEAAAAAAAEAAgAAAAQAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAFAAcAAAAEAAAAAAAFAAgAAAAMAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAcAAAAEAAAAAAAGAAgAAAAUAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAEAAAAAAAHAAgAAAAMAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAgAAAAMAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAIAAAAAAAJAAgAAAAMAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAEAAAAAAAKAAgAAAAQAAAAAAALAAAAAAAAAAAAAAALAAEAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAEAAAAAAALAAgAAAAMAAAAAAAMAAAAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAAMAAcAAAAEAAAAAAAMAAgAAAAMAAAAAAANAAAAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAAAAAAAAAANAAMAAAAAAAAAAAANAAQAAAAAAAAAAAANAAUAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAEAAAAAAANAAgAAAAMAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAAAAAAAAAAOAAIAAAAAAAAAAAAOAAMAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAIAAAAAAAOAAgAAAAMAAAAAAAPAAAAAAAAAAAAAAAPAAEAAAAAAAAAAAAPAAIAAAAAAAAAAAAPAAMAAAAAAAAAAAAPAAQAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAAEAAAAAAAPAAgAAAAQAAAAAAAQAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAQAAIAAAAAAAAAAAAQAAMAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAcAAAAIAAAAAAAQAAgAAAAUAAAAAAARAAAAAAAAAAAAAAARAAEAAAAAAAAAAAARAAIAAAAAAAAAAAARAAMAAAAAAAAAAAARAAQAAAAAAAAAAAARAAUAAAAAAAAAAAARAAYAAAAAAAAAAAARAAcAAAAEAAAAAAARAAgAAAAMAAAAAAAAAAkAAAAQAAAAAAABAAkAAAAMAAAAAAACAAkAAAAMAAAAAAADAAkAAAAUAAAAAAAEAAkAAAAMAAAAAAAFAAkAAAAMAAAAAAAGAAkAAAAMAAAAAAAHAAkAAAAMAAAAAAAIAAkAAAAMAAAAAAAJAAkAAAAMAAAAAAAKAAkAAAAUAAAAAAALAAkAAAAMAAAAAAAMAAkAAAAQAAAAAAANAAkAAAAMAAAAAAAOAAkAAAAMAAAAAAAPAAkAAAAMAAAAAAAQAAkAAAAMAAAAAAARAAkAAAAUAAAAAAAIAAcAAAAEAAAAAAA=")
+tile_set = SubResource("TileSet_6m0sr")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(2304, 0)
+autoscroll = Vector2(30, 0)
+repeat_times = 2
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="Parallax2D"]
+modulate = Color(1, 1, 1, 0.486275)
+tile_map_data = PackedByteArray("AAA7AAcAAAAAAAAAAAAPABcAAAAQAAAAAABYABUAAAAQAAAAAABrAAoAAAAAAAAAAACGABEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_644dn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.305556
+anchor_right = 1.0
+anchor_bottom = 0.518519
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("3_5ej8n")
+theme_override_font_sizes/font_size = 80
+text = "Jetpack Joyride Knockoff
+"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = -6.0
+offset_right = 151.5
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.636847, 0.628079, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_o44ha")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oydem")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6sgnb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_f0n2x")
+text = "Start Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

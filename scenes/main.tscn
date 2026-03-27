@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://d2e1heqvd0gdd"]
+[gd_scene load_steps=18 format=4 uid="uid://d2e1heqvd0gdd"]
 
 [ext_resource type="Texture2D" uid="uid://dwjo25fih42n6" path="res://art/tiles.png" id="1_c53iv"]
 [ext_resource type="PackedScene" uid="uid://cfv7etrw8hv06" path="res://scenes/player.tscn" id="1_wcl23"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cl0ted7oqjooe" path="res://scenes/trees2.tscn" id="6_a7tjj"]
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="7_gfbd8"]
 [ext_resource type="Texture2D" uid="uid://d2bnhq6inkd42" path="res://art/heart copy.png" id="8_62pen"]
+[ext_resource type="FontFile" uid="uid://chftjwlc4ghut" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="11_b0kfi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0b6q"]
 texture = ExtResource("1_c53iv")
@@ -99,27 +100,76 @@ tree2 = ExtResource("6_a7tjj")
 [node name="Timer" type="Timer" parent="tree1spawner"]
 autostart = true
 
-[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("heartContainer")]
+[node name="GameController" type="Node" parent="." node_paths=PackedStringArray("heartContainer", "pointsText", "highScore")]
 script = ExtResource("7_gfbd8")
-heartContainer = NodePath("../HBoxContainer")
+heartContainer = NodePath("../UI/HBoxContainer")
+pointsText = NodePath("../UI/Label")
+highScore = NodePath("../UI/highscore")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 36.0
-offset_top = 46.0
-offset_right = 236.0
-offset_bottom = 110.0
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
 
-[node name="heart" type="TextureRect" parent="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.071
+anchor_right = 0.205
+anchor_bottom = 0.17
+offset_left = 0.287998
+offset_top = -0.00800323
+offset_right = -0.160019
+offset_bottom = -0.160004
+
+[node name="heart" type="TextureRect" parent="UI/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("8_62pen")
 
-[node name="heart2" type="TextureRect" parent="HBoxContainer"]
+[node name="heart2" type="TextureRect" parent="UI/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("8_62pen")
 
-[node name="heart3" type="TextureRect" parent="HBoxContainer"]
+[node name="heart3" type="TextureRect" parent="UI/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("8_62pen")
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -503.0
+offset_top = 76.0
+offset_right = 497.0
+offset_bottom = 149.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_b0kfi")
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="UI/Label"]
+wait_time = 3.0
+autostart = true
+
+[node name="highscore" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.0
+offset_top = 36.0
+offset_right = 108.0
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_b0kfi")
+theme_override_font_sizes/font_size = 40
+text = "High Score: "
+horizontal_alignment = 1
 
 [connection signal="timeout" from="bird spawner/Timer" to="bird spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="tree1spawner/Timer" to="tree1spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="UI/Label/Timer" to="GameController" method="_on_timer_timeout"]

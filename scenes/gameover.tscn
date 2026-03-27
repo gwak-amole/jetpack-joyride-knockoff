@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://cci347buliqkw"]
+
+[ext_resource type="Script" path="res://scripts/gameover.gd" id="1_16mqx"]
+[ext_resource type="FontFile" uid="uid://crns6iuv23mjg" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="1_dxi2y"]
+[ext_resource type="FontFile" uid="uid://chftjwlc4ghut" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_cn04e"]
+
+[node name="gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_16mqx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0923971, 0.0923971, 0.0923971, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0503472
+anchor_top = 0.279321
+anchor_right = 0.953125
+anchor_bottom = 0.557099
+offset_left = 5.0
+offset_right = 5.0
+offset_bottom = -1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dxi2y")
+theme_override_font_sizes/font_size = 150
+text = "Game Over"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0546875
+anchor_top = 0.57716
+anchor_right = 0.689236
+anchor_bottom = 0.66821
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_cn04e")
+theme_override_font_sizes/font_size = 40
+text = "Back Home"
+alignment = 0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
