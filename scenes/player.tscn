@@ -36,13 +36,13 @@ script = ExtResource("1_v2poa")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
-amount = 128
+amount = 32
 direction = Vector2(-3, 1)
 spread = 0.0
 initial_velocity_min = 14.05
 initial_velocity_max = 287.88
-scale_amount_min = 0.0
-scale_amount_max = 11.8
+scale_amount_min = 20.0
+scale_amount_max = 30.0
 color_initial_ramp = SubResource("Gradient_egw1i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
